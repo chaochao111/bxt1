@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "技术员管理",
+      "usingComponents": {
+        "dropdown": "/components/dropdown/dropdown"
+      }
+}

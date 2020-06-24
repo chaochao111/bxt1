@@ -1,0 +1,49 @@
+<!--pages/admin_mechanicadd/admin_mechanicadd.wxml-->
+<view class="ptb-20">
+  <form>
+      <view class="felx" style="border-bottom:1px">
+        <text class="text_left">性别</text>
+        <radio-group bindchange="radiochange">
+        <radio value='男'>男</radio>
+        <radio value='女' checked>女</radio>
+        </radio-group>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">姓名</text>
+        <input id="name" class="right" placeholder="请输入姓名" value="{{mechanicname}}" bindinput="frommechanicName"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">工号</text>
+        <input id="num" class="right" placeholder="请输入工号" value="{{mechanicnum}}" bindinput="formmechanicNum"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">联系电话</text>
+        <input id="phone" class="right" style="text_align:right" placeholder="请输入手机号" value="{{mechanicphone}}" bindinput="formmechanicphone"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">维修类型</text>
+        <view class="right">
+          <dropdown prop-array='{{goodlist}}'  bind:select='select1' />
+        </view>
+      </view>
+       <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">负责楼号</text>
+        <view class="right">
+          <dropdown prop-array='{{buildinglist}}'  bind:select='select' />
+        </view>
+      </view>
+  </form> 
+  <view class="felx">
+    <button class="btn_3" bindtap="sumit">保存</button>
+    <button class="btn_3" bindtap="reset">重置</button>
+    <button class="btn_3" bindtap="cancel">取消</button>
+  </view>
+</view>
+
+
+

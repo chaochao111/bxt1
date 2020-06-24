@@ -1,0 +1,24 @@
+/* pages/my_information/my_information.wxss */
+.nav{
+    background-color: #fff;
+}
+.top{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 auto;
+}
+.nickname{
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+.item{
+  height: 70rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  display: flex;
+  border-radius: 20rpx;
+}
+
+.align_right{
+  text-align: right;
+}

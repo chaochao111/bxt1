@@ -1,0 +1,27 @@
+/* pages/admin_renyuan/admin_renyuan.wxss */
+.list-msg2 {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 0 10rpx;
+    width: 40%;
+
+}
+ 
+.select_box {
+    background-color: #eee;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+    width: 40%;
+    margin-left: 35px;
+}
+
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}

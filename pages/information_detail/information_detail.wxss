@@ -1,0 +1,30 @@
+/* pages/information_detail/information_detail.wxss */
+.container-center{
+  display: flex;
+  margin-top: 20px;
+}
+.l_30{
+  width: 30px;
+}
+.r_30{
+  width: 30px;
+}
+.c_60{
+  flex: 1;
+}
+.m_t_10{
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+.m_t_20{
+  margin-top: 20px;
+}
+.m_l_30{
+  margin-left: 30px;
+}
+.m_r_30{
+  margin-right: 30px;
+}
+.container_width{
+  width: calc(100vw - 60px); 
+}

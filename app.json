@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/repair/repair",
+    "pages/my/my",
+    "pages/information/information",
+    "pages/my_information/my_information",
+    "pages/my_help/my_help",
+    "pages/index_mechanic/index_mechanic",
+    "pages/index_admin/index_admin",
+    "pages/information_detail/information_detail",
+    "pages/admin_renyuan/admin_renyuan",
+    "pages/admin_quyu/admin_quyu",
+    "pages/admin_xinxi/admin_xinxi",
+    "pages/admin_wenti/admin_wenti",
+    "pages/admin_gonggao/admin_gonggao",
+    "pages/admin_mechanicadd/admin_mechanicadd",
+    "pages/admin_login/admin_login",
+    "pages/mechanic_login/mechanic_login",
+    "pages/test/test"
+  ],
+  "window": {
+    "navigationBarTitleText": "海滨报修通",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#BCEE68",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "images/home.png",
+        "iconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/repair/repair",
+        "text": "报修",
+        "selectedIconPath": "images/repair.png",
+        "iconPath": "images/repair.png"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "text": "记录",
+        "selectedIconPath": "images/information_icon.png",
+        "iconPath": "images/information_icon.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "selectedIconPath": "images/user.png",
+        "iconPath": "images/user.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

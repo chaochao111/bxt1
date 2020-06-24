@@ -1,0 +1,57 @@
+<!--pages/admin_quyu/admin_quyu.wxml-->
+<view class="ptb-20">
+  <view bindtap="addquyu" style="display: flex;">
+    <image class="addicon" src="../../images/add.png"></image>
+    <view class="addtext">新增区域</view>
+  </view>
+  <view class="temp"></view>
+   <view wx:for="{{buildinglist}}" wx:key="">
+    <view class="li" data-index="{{index}}" data-changeid="{{item.buildingid}}">
+      <view class="felx">
+        <view style="margin-right: 20px;" class="">{{item.buildingcode}}#</view>
+        <view >{{item.buildingsex}}</view>
+      </view>
+      
+      <view class="br">{{item.detailaddress}}</view>
+      <button class="delbtn" bindtap="delquyu" data-id='{{item.buildingid}}' data-name='{{item.name}}'data-index='{{index}}'>删除</button>
+      <view class="temp"></view>
+    </view>
+  </view>
+</view>
+
+
+  <!--新增弹窗-->
+<view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}">
+</view> 
+<view class = "modal-dialog {{isdisplay1?'oldmodelClass':'newmodelClassClass'}}" wx: if = "{{showModal1}}"> 
+  <view class = "modal-title" >新增区域 </view>
+  <view class="modal-content">
+  <view class="modal-input">
+      <text class="model_titel">楼号</text>
+      <input placeholder="输入楼号" style="width: 300px;" bindinput='buildingCode' name='buildingcode'></input>
+    </view>
+      <view class="modal-input">
+      <text class="model_titel">性别</text>
+      <input placeholder="输入性别" style="width: 300px;" bindinput='buildingSex' name='buildingsex'></input>
+    </view>
+    <view class="modal-input">
+      <text class="model_titel">地址</text>
+      <input placeholder="详细地址内容" style="width: 300px;" bindinput='detailAddress' name="detailsddress"></input>
+    </view>
+  </view > 
+  <view class = "modal-footer" > 
+  <view class = "btn-cancel"bindtap = "onCancel1" data-status = "cancel" > 取消 </view>
+  <view class="btn-confirm" bindtap="onConfirm1" data-status="confirm">确定</view > 
+  </view>
+</view >
+
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+ <view class="weui-loading"></view>
+ <view class="weui-loadmore__tips">正在加载</view>
+</view>
+
+<view class="weui-loadmore" hidden="{{isHideNoMore}}">
+ <view class="weui-loadmore__tips">没有更多数据了</view>
+</view>
+
+ 

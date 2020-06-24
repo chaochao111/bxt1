@@ -1,0 +1,32 @@
+<view class="ptb-20">
+    <view bindtap="addrenyuan" style="display: flex;">
+      <image class="addicon" src="../../images/add.png"></image>
+      <view class="addtext">新增技术员</view>
+    </view>
+    <view class="temp"></view>
+    <!-- 下拉框 -->
+    <view class="felx">
+        <text>类型</text>
+        <view class="right">
+          <dropdown prop-array='{{goodlist}}'  bind:select='select1' />
+        </view>
+        <button class="delbtn"  bindtap="shaixuan">确定</button>
+    </view>
+        
+        
+  <view class="temp"></view>
+   <view wx:for="{{mechaniclist}}" wx:key="">
+    <view class="li" data-index="{{index}}" data-changeid="{{item.mechanicid}}">
+      <view class="felx">
+        <view style='margin-right: 20px'>{{item.mechanicname}}</view>
+        <view style='margin-right: 20px'>{{item.mechanicbuildingname}}#</view>
+        <view class="align_right">{{item.mechanicsex}}</view>
+      </view>
+      <view>{{item.mechanicnum}}</view>
+      <view>{{item.typname}}</view>
+      <view>{{item.mechanicphone}}</view>
+      <button class="delbtn" bindtap="delrenyuan" data-id='{{item.mechanicid}}' data-name='{{item.name}}'data-index='{{index}}'>删除</button>
+      <view class="temp"></view>
+    </view>
+  </view>
+</view>

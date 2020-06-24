@@ -1,0 +1,4 @@
+/* pages/admin_gonggao/admin_gonggao.wxss */
+.model_titel{
+  width: 20%
+}

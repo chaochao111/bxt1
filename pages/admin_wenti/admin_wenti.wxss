@@ -1,0 +1,15 @@
+/* pages/admin_wenti/admin_wenti.wxss */
+
+.model_titel{
+  width: 20%
+}
+.addicon{
+  width: 25px;
+  height: 25px;
+}
+.addtext{
+  align-items: center;
+  justify-content: center;  
+}
+
+

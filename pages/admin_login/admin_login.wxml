@@ -1,0 +1,31 @@
+<!--登录页面--> 
+<view class = "item mechanic_login_contain">
+    <!-- <view class="login-item">
+      <view class="login-item-info">用户名</view>
+      <view><input /></view>
+    </view>
+    <view class="login-item">
+      <view class="login-item-info">密码</view>
+      <view class="login-pwd">
+        <input style="flex-grow:1" password="true" /> 
+        <text> 忘记密码 </text>
+      </view>
+    </view> -->
+    <view class="login-item">
+      <view class="login-item-info">手机号</view>
+      <view class="login-code">
+        <input style="flex-grow:1" bindinput="getphone" placeholder-style="color:#999;font-size: 15px" placeholder='请输入手机号'/> 
+        
+    </view>
+    </view>   
+    <view class="login-item">
+      <view class="login-item-info" >验证码</view>
+      <view class="login-code">
+        <input bindinput="getcode"  bindinput="getcode" placeholder-style="color:#999;font-size: 15px" placeholder='请输入验证码' /> 
+        <text class='code_color' bindtap="sendcode"> 获取验证码 </text>
+      </view>
+    </view>
+    <view class="login-item bottom">
+      <button class="login-btn" bindtap="mechanic_login">登录</button>
+    </view>
+</view>

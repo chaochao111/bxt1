@@ -1,0 +1,39 @@
+<!--pages/admin_wenti/admin_wenti.wxml-->
+<view class="ptb-20">
+  <view bindtap="addwenti" style="display: flex;">
+    <image class="addicon" src="../../images/add.png"></image>
+    <view class="addtext">新增问题</view>
+  </view>
+  <view class="temp"></view>
+  <block wx:for='{{helplist}}' wx:key="id">
+    <view class="li">
+      <view class="br">{{item.name}}?</view>
+      <view class="br">{{item.content}}</view>
+      <button class="delbtn" bindtap="delwenti" data-id='{{item.id}}' data-name='{{item.name}}'data-index='{{index}}'>删除</button>
+      <view class="temp"></view>
+    </view>
+  </block>
+</view>
+
+  <!--新增弹窗-->
+<view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}">
+</view> 
+<view class = "modal-dialog {{isdisplay1?'oldmodelClass':'newmodelClassClass'}}" wx: if = "{{showModal1}}"> 
+  <view class = "modal-title" >新增问题 </view>
+  <view class="modal-content">
+    <view class="modal-input">
+        <text class="model_titel">标题</text>
+
+        <input class="br" placeholder="输入问题标题" style="width: 300px;" bindinput='wentiName' name='name'></input>
+    </view>
+    <view class="modal-input">
+        <text class="model_titel">指南</text>
+        <textarea placeholder="请输入问题指南" bindinput='wentiContent' name="content"></textarea>
+    </view>
+  </view> 
+  <view class = "modal-footer" > 
+    <view class = "btn-cancel"bindtap = "onCancel1" data-status = "cancel" > 取消 </view>
+    <view class="btn-confirm" bindtap="onConfirm1" data-status="confirm">确定</view > 
+  </view>
+</view >
+

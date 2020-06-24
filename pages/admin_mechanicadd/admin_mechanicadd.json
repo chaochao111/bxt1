@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "新增维修员",
+    "usingComponents": {
+      "dropdown": "/components/dropdown/dropdown"
+    }
+}

@@ -1,0 +1,108 @@
+<view class='content'>
+  <view class='log'>
+    <view class="{{currentTab==0?'selected':'default'}}" data-current="0" bindtap='switchNav'>
+      未完成
+    </view>
+    <view class="{{currentTab==1?'selected':'default'}}" data-current="1" bindtap='switchNav'>
+      已完成
+    </view>
+  </view>
+  <swiper current='{{currentTab}}' style='height:99999999999px' bindchange='bindChange'class="ptb-10">
+      <swiper-item style="top: 51px;">
+      <view  wx:for="{{unfinished}}" wx:key="" >
+        <view class="li "data-index="{{index}}" bindtap="information_detail" data-detailbxdanid="{{item.bxdanid}}">
+          <view class="li_felx">
+            <text style='margin-right: 20px'>楼号：{{item.buildingname}}#</text>
+            <text>宿舍号：{{item.room}}</text>
+          </view>
+          <view class="li_felx" >
+            <text style='margin-right: 20px'>区域：{{item.areaname}}</text>
+            <text>报修单号：{{item.bxdanid}}</text>
+          </view>
+          <view class="li_felx" style="dispaly:block">
+            <view> 
+              类型：
+              <text style='margin-right: 20px'wx:if="{{item.typid == 1}}">家具类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 2}}">电器类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 3}}">门窗类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 4}}">其他</text>
+            </view>
+         
+          </view>
+            <view class="li_felx">
+            <text wx:if="{{item.state == 0}}">维修状态：未接单</text>
+            <text wx:if="{{item.state == 1}}">维修状态：维修中</text>
+            <text wx:if="{{item.state == 2}}">维修状态：未反馈</text>
+            <text wx:if="{{item.state == 3}}">维修状态：待评价</text>
+            <text wx:if="{{item.state == 4}}">维修状态：已完成</text>
+              <!-- 维修状态：{{item.state}} -->
+            </view>
+        </view>
+        <view class="temp"></view>
+      </view>
+    </swiper-item>
+
+    <swiper-item style="top: 51px;">
+    <view wx:for="{{finished}}" wx:key="">
+      <view class="li "data-index="{{index}}" >
+        <view bindtap="information_detail" data-detailbxdanid="{{item.bxdanid}}">
+          <view class="li_felx" >
+              <text style='margin-right: 20px'>楼号：{{item.buildingname}}</text>
+              <text>宿舍号：{{item.room}}</text>
+            </view>
+            <view class="li_felx">
+              <text style='margin-right: 20px'>区域：{{item.areaname}}</text>
+              <text>报修单号：{{item.bxdanid}}</text>
+            </view>
+            <view class="li_felx">
+            <text style='margin-right: 20px'wx:if="{{item.typid == 1}}">类型：家具类</text>
+            <text style='margin-right: 20px'wx:if="{{item.typid == 2}}">类型：电器类</text>
+            <text style='margin-right: 20px'wx:if="{{item.typid == 3}}">类型：门窗类</text>
+            <text style='margin-right: 20px'wx:if="{{item.typid == 4}}">类型：其他</text>
+            </view>
+            </view>
+          <view class="li felx btn_flex">
+            <button wx:if="{{!item.backtime}}" class="infoormation_btn" bindtap="fankui" data-bxdanid="{{item.bxdanid}}">反馈结果</button>
+            <button wx:if="{{!item.assesstime}}" class="infoormation_btn"bindtap="pingjia" data-bxdanid="{{item.bxdanid}}">评价维修</button>
+          </view>
+        </view>
+        <view class="temp"></view>
+      </view>
+    </swiper-item>
+  </swiper>
+  </view>
+  <!--反馈弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+</view> 
+<view class = "modal-dialog {{isdisplay?'oldmodelClass':'newmodelClassClass'}}" wx: if = "{{showModal}}"> 
+  <view class = "modal-title" > 反馈结果 </view>
+  <view class="modal-content">
+    <view>
+    <text style="font-size: 20px">反馈</text>
+    <radio-group class="right1" bindchange="radiochange">
+        <radio value='未解决'>未解决</radio>
+        <radio value='已解决' checked>已解决</radio>
+    </radio-group>
+    </view>
+     </view > 
+  <view class = "modal-footer" > 
+  <view class = "btn-cancel"bindtap = "onCancel" data-status = "cancel" > 取消 </view>
+  <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view > 
+  </view>
+</view > 
+
+  <!--评价弹窗-->
+<view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}">
+</view> 
+<view class = "modal-dialog {{isdisplay1?'oldmodelClass':'newmodelClassClass'}}" wx: if = "{{showModal1}}"> 
+  <view class = "modal-title" >评价维修 </view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <textarea placeholder="详细评价维修" bindinput="inputassess"></textarea>
+    </view>
+  </view > 
+  <view class = "modal-footer" > 
+  <view class = "btn-cancel"bindtap = "onCancel1" data-status = "cancel" > 取消 </view>
+  <view class="btn-confirm" bindtap="onConfirm1" data-status="confirm">确定</view > 
+  </view>
+</view >

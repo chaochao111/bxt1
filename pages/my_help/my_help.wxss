@@ -1,0 +1,20 @@
+/* pages/my_help/my_help.wxss */
+.title{
+  color:#2894FF
+}
+.content_detail{
+  /* background-color: #eee; */
+  margin-top: 5px;
+  padding: 0 10px;
+  color: #999;
+  line-height: 20px;
+  text-indent: 10px;
+  letter-spacing: 4px;
+}
+.help_title{
+  font-size: 14px;
+  padding: 0 10px;
+}
+.centent_title{
+  margin-top: 5px;
+}

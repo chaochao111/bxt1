@@ -1,0 +1,107 @@
+<view class='content '>
+  <view>
+    <view class='log'>
+      <view class="{{currentTab==0?'selected':'default'}}" data-current="0" bindtap='switchNav'>
+        未维修
+      </view>
+      <view class="{{currentTab==1?'selected':'default'}}" data-current="1" bindtap='switchNav'>
+        维修中
+      </view>
+      <view class="{{currentTab==2?'selected':'default'}}" data-current="2" bindtap='switchNav'>
+        已完成
+      </view>
+    </view>
+    <swiper class="ptb-10" current='{{currentTab}}' style='height:{{winHeight}}px' bindchange='bindChange'>
+      <swiper-item style="top: 51px;">
+             <view wx:for="{{unrepaired}}" wx:key="">
+        <view class="li "data-index="{{index}}" data-changeid="{{item.bxdanid}}">
+        <view bindtap="information_detail" data-detailbxdanid="{{item.bxdanid}}">
+            <view class="li_felx">
+              <view class="left">
+                  <text>楼号：{{item.buildingname}}</text>
+                  <text>宿舍号：{{item.room}}</text>
+              </view>
+              <text class="right1">区域：{{item.areaname}}</text>
+            </view>
+            <view class="li_felx">
+              <text class="left">单号：{{item.bxdanid}}</text>
+              <text class="right1">类型：<text style='margin-right: 20px'wx:if="{{item.typid == 1}}">家具类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 2}}">电器类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 3}}">门窗类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 4}}">其他</text>
+              </text>
+            </view>
+            <view class="li_felx">
+              <text class="left">报修时间：{{item.createtime}}</text>
+            </view>
+          </view>
+          <view class="li_felx">
+          <text class="left">联系电话：{{item.phone}}</text>
+          <button class="infoormation_btn" bindtap="start_weixiu" data-bxdanid="{{item.bxdanid}}">开始维修</button>
+          </view>
+         </view>
+          <view class="temp"></view>
+        </view>
+      </swiper-item>
+      <swiper-item style="top: 51px;">
+        <view wx:for="{{repaireding}}" wx:key="">
+        <view class="li "data-index="{{index}}" data-changeid="{{item.id}}">
+        <view bindtap="information_detail" data-detailbxdanid="{{item.bxdanid}}">
+          <view class="li_felx">
+          <view class="left">
+          <text>楼号：{{item.buildingname}}</text>
+          <text>宿舍号：{{item.room}}</text>
+          </view>
+            <text class="right1">区域：{{item.areaname}}</text>
+          </view>
+          <view class="li_felx">
+            <text class="left">单号：{{item.bxdanid}}</text>
+            <text class="right1">类型：<text style='margin-right: 20px'wx:if="{{item.typid == 1}}">家具类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 2}}">电器类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 3}}">门窗类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 4}}">其他</text>
+              </text>
+          </view>
+          <view class="li_felx">
+            <text class="left">报修时间：</text>
+          </view>
+          </view>
+          <view class="li_felx">
+          <text class="left">联系电话：{{item.phone}}</text>
+          <button class="infoormation_btn" bindtap="end_weixiu" data-bxdanid="{{item.bxdanid}}">维修完成</button>
+          </view>
+          </view>
+          <view class="temp"></view>
+        </view>
+      </swiper-item>
+      <swiper-item style="top: 51px;">
+        <view wx:for="{{repaireded}}" wx:key="">
+        <view class="li "data-index="{{index}}" data-changeid="{{item.id}}">
+        <view bindtap="information_detail" data-detailbxdanid="{{item.bxdanid}}">
+          <view class="li_felx">
+          <view class="left">
+          <text>楼号：{{item.buildingname}}</text>
+          <text>宿舍号：{{item.room}}</text>
+          </view>
+            <text class="right1">区域：{{item.areaname}}</text>
+          </view>
+          <view class="li_felx">
+            <text class="left">单号：{{item.bxdanid}}</text>
+            <text class="right1">类型：<text style='margin-right: 20px'wx:if="{{item.typid == 1}}">家具类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 2}}">电器类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 3}}">门窗类</text>
+              <text style='margin-right: 20px'wx:if="{{item.typid == 4}}">其他</text>
+              </text>
+          </view>
+          <view class="li_felx">
+          <text class="left">联系电话：{{item.phone}}</text>
+          </view>
+          </view>
+          </view>
+          <view class="temp"></view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  </view>
+

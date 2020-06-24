@@ -1,0 +1,73 @@
+<!-- 弹框需要用到下面两个 -->
+<!-- <import src="/components/dialog/dialog.wxml"/>
+<template data="{{...myDialog}}" is="dialog" /> -->
+
+<view class="container">
+  <view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<button open-type='getUserInfo' hidden="{{loginButton}}">未登录，点击登陆</button>
+    <text class="userinfo-nickname" hidden='{{usernameText}}'>{{ userInfo.nickName }}</text>
+	</view>
+  <view class="temp"></view>
+  <view>
+      <view class="li lie1 person_info" bindtap="my_information">
+        <view style="display:flex;align-items:center">
+          <image class="image_icon m-t-5"  width="16" src="../../images/my_information.png" />
+          <text>个人信息</text>
+        </view>
+        <view style="position: absolute;right: 10px;" >
+          <image class="image_icon" src="../../images/arrow_right_64.png" >
+          </image>
+        </view>
+      </view>
+      <!-- <view class="temp1"></view> -->
+      <!-- <view class="li lie1">
+       <text>1233</text>
+      </view> -->
+      <view class="temp1"></view>
+      <view class="li lie1 person_info" bindtap="my_help">
+        <view style="display:flex;align-items:center">
+          <image class="image_icon m-t-5" src="../../images/my_help.png"></image>
+          <text>常见问题</text>
+        </view>
+        <view style="position: absolute;right: 10px;" >
+            <image class="image_icon" src="../../images/arrow_right_64.png" >
+            </image>
+        </view>
+      </view>
+  </view>
+  <view class="temp"></view>
+  <view class="part4 newus">
+    <view>
+      <view class="li li_phone">
+        <form bindsubmit="getfmid_all" reportSubmit="true">
+          <button class="nobtn" formType="submit" openType="share">
+            <image src="../../images/kefu.gif" style="width:52rpx;height:52rpx;"></image>
+          </button>
+          <!-- <button formType="submit" openType="share">告诉好友</button> -->
+        </form>
+      </view>
+      <view class="li li_phone">
+        <form bindsubmit="getfmid_all" reportSubmit="true" bindtap="jumpPhone">
+          <button class="nobtn" formType="submit" >
+            <image src="../../images/my_kefu.png" style="width:52rpx;height:52rpx;"></image>
+          </button>
+          <!-- <button formType="submit"  >电话客服</button> -->
+        </form>
+      </view>
+      <view class="li li_phone">
+        <form bindsubmit="getfmid_all" reportSubmit="true" bindtap="aboutUs">
+          <button class="nobtn" formType="submit" >
+            <image src="../../images/my_about.png" style="width:52rpx;height:52rpx;"></image>
+          </button>
+          <!-- <button formType="submit" >关于我们</button> -->
+        </form>
+      </view>
+    </view>
+  </view>
+  <view class="banquan">
+    <view>
+      <text>版权所有@北京交通大学海滨学院宿管部</text>
+    </view>
+  </view>
+</view>

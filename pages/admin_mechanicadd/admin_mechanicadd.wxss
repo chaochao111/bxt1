@@ -1,0 +1,17 @@
+/* pages/admin_mechanicadd/admin_mechanicadd.wxss */
+.button_style{
+  background-color: rgb(220, 220, 220);
+    position:fixed;
+    bottom:0;
+    display:flex;
+    width:97%;
+    justify-content:center;
+}
+.text_left{
+  width: 25%;
+}
+.btn_3{
+  background-color: #00BBFF;
+  width: 33%;
+  color:white;
+}

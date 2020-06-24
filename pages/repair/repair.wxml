@@ -1,0 +1,69 @@
+<!--pages/repair/repair.wxml-->
+
+<view class="ptb-10">
+<view class='repair_form'>
+  <form>
+      <view class="felx">
+        <text class="text_left">报修区域</text>
+        <radio-group bindchange="radiochange">
+          <radio value='公共区域'>公共区域</radio>
+          <radio class='p_l_10'value='私人区域' checked>个人宿舍</radio>
+        </radio-group>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">楼号</text>
+         <view class="right">
+          <dropdown prop-array='{{buildinglist}}'  bind:select='select' />
+        </view>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">姓名</text>
+        <input class="right" placeholder="请输入姓名" value="{{myinfo.username}}" bindinput="inputusername" placeholder-style="color:#999;font-size: 13px"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">学号</text>
+        <input class="right" placeholder="请输入学号" placeholder-style="color:#999;font-size: 13px" value="{{myinfo.usernum}}" bindinput="inputusernum"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">联系电话</text>
+        <input class="right" style="text_align:right" placeholder="请输入手机号" placeholder-style="color:#999;font-size: 13px" value="{{myinfo.phone}}" bindinput="inputphone"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">宿舍号</text>
+        <input class="right" placeholder="请输入宿舍号" value="{{myinfo.room}}"  placeholder-style="color:#999;font-size: 13px" bindinput="inputroom"></input>
+      </view>
+      <view class="temp1"></view>
+      <view class="felx hangaocenter">
+        <text class="text_left">报修物品</text>
+        <view class="right">
+          <dropdown prop-array='{{goodlist}}'  bind:select='select1' />
+        </view>
+        <!-- <input class="right" placeholder="请输入宿舍楼号" placeholder-style="color:#999;font-size: 13px"></input> -->
+      </view>
+      <view class="temp"></view>
+      <view>
+        <text class='p_l_10'>情况描述</text>
+        <textarea class='p_l_10' placeholder="请详细描述故障" placeholder-style="color:#999;font-size: 13px" bindinput="inputdescription"></textarea>
+      </view>
+      <view class="temp"></view>
+      <view class="question-images" style="width: 180px;height: 180px;" bindtap='chooseImage'>
+        <view >
+          <view class="q-image-wrap">
+            <!-- 图片缩略图  -->
+            <image class="q-image" src="{{img1}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview" style="width: 180px;height: 180px;" ></image>
+          </view>
+        </view>
+      </view>
+     
+    </form>
+  </view>
+  <view>
+  <button class='goodbutton'  hover-class="hover" bindtap="sumit">提交</button>
+  </view>
+
+</view>

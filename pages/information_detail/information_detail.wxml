@@ -1,0 +1,39 @@
+<!--pages/information_detail/information_detail.wxml-->
+<view class='container-center'>
+	<view class="l_30"></view>
+	<view class='c_60'>
+		<view class="m_t_10">报修单号 : {{bxdandetail.bxdanid}}</view>
+      <view class="temp1"></view>
+		<view class="m_t_10">创建时间 : {{bxdandetail.createtime}}</view>
+       <view class="temp1"></view>
+		<view class="m_t_10">楼　　号 : {{bxdandetail.buildingname}}</view>
+       <view class="temp1"></view>
+		<view class="m_t_10">宿　　舍 : {{bxdandetail.room}}</view>
+       <view class="temp1"></view>
+		<view class="m_t_10">报修区域 :{{bxdandetail.areaname}}</view>
+       <view class="temp1"></view>
+		<view class="m_t_10">报修物品 : <text style='margin-right: 20px'wx:if="{{bxdandetail.typid == 1}}">家具类</text>
+              <text style='margin-right: 20px'wx:if="{{bxdandetail.typid == 2}}">电器类</text>
+              <text style='margin-right: 20px'wx:if="{{bxdandetail.typid == 3}}">门窗类</text>
+              <text style='margin-right: 20px'wx:if="{{bxdandetail.typid == 4}}">其他</text></view>
+       <view class="temp1"></view>
+		<view class="m_t_10">维修状态 : <text wx:if="{{bxdandetail.state == 0}}">未接单</text>
+            <text wx:if="{{bxdandetail.state == 1}}">维修中</text>
+            <text wx:if="{{bxdandetail.state == 2}}">未反馈</text>
+            <text wx:if="{{bxdandetail.state == 3}}">待评价</text>
+            <text wx:if="{{bxdandetail.state == 4}}">已完成</text></view>
+       <view class="temp1"></view>
+       <view class="m_t_10">反馈结果 :{{bxdandetail.feedback}} </view>
+       <view class="temp1"></view>
+       <view class="m_t_10">维修评价 :{{bxdandetail.assess}} </view>
+       <view class="temp1"></view>
+		<view class="m_t_10">详细描述:<textarea> {{bxdandetail.description}}</textarea ></view>
+       <view class="temp1"></view>
+	</view>
+	<view class="r_30"></view>
+</view>
+	<view>
+      <view class="temp"></view>
+      <view class="m_t_20 m_l_30">图片详情:</view>
+		<cover-image class='m_l_30 m_r_30 container_width'  src="{{bxdandetail.picture}}"></cover-image>
+	</view>

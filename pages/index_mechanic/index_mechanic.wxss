@@ -1,0 +1,46 @@
+/* pages/index_ mechanic/index_ mechanic.wxss */
+.log
+{
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction:row;
+  width: 100%;
+  z-index:999;
+  background: #fff;
+}
+.selected
+{
+  font-size: 15px;
+  color: #00bbff;
+  width: 33%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 5rpx solid#00bbff;
+}
+.default
+{
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.content
+{
+  position: absolute;
+  width: 100%;
+}
+
+.right1{
+  display: flex;
+  margin-right: 20px;
+}
+.passwordbtn{
+  width:100%; 
+  color:#00bbff; 
+  position:fixed; 
+  bottom:0; 
+  margin-bottom: 2px;
+}

@@ -1,0 +1,14 @@
+<!--pages/my_help/my_help.wxml-->
+<view class="container ptb-10">
+  <block wx:for="{{helplist}}" wx:key="">
+    <view class="centent_title" bindtap="showHide" data-index="{{index}}" data-changeid="{{item.id}}">
+      <view class="title br help_title" >{{index+1}}~{{item.name}}?</view>
+      <!-- <image hidden="{{item.isTrue==true}}" src="/images/ic_down.png"></image>
+      <image hidden="{{item.isTrue==false}}" src="/images/ic_top111.png"></image> -->
+    </view>
+    <view class="content_detail" wx:if="{{item.istrue==1}}">
+    <view class="br">{{item.content}}</view>
+    </view>
+  </block>
+</view>
+

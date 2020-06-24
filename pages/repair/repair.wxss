@@ -1,0 +1,53 @@
+/* pages/repair/repair.wxss */
+.felx{
+  display: flex;
+  padding-top: 10px;
+}
+.ptb-10{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.button_style{
+  background-color: rgb(220, 220, 220);
+    position:fixed;
+    bottom:0;
+    display:flex;
+    width:97%;
+    justify-content:center;
+}
+.text_left{
+  width: 25%;
+  padding-left: 10px;
+}
+/* border-radius: 98rpx;是控制按钮边变圆 */
+.goodbutton {
+  margin-top: 30px;
+  width: 80%;
+  background-color: rgb(67, 184, 252);
+  color: white;
+  border-radius: 98rpx;
+  background: bg_red;
+}
+ 
+/* 按下变颜色 */
+.hover {
+  background:  rgb(67, 184, 252);
+}
+radio{
+  font-size: 12px;
+  color: #999;
+}
+input[type="radio"]{
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+.repair_form{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+.p_l_10{
+  padding-left: 10px;
+}

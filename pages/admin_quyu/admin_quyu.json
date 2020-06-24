@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "宿舍区域管理",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f8f8f8",
+  "enableReachBottom": "true"
+}

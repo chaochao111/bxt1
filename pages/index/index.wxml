@@ -1,0 +1,54 @@
+<!--pages/index/index.wxml-->
+<swiper class="swiper swiper1">
+    <swiper-item>
+    <image src="../../images/swiper1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="../../images/swiper2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="../../images/swiper3.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="../../images/swiper4.jpg"></image>
+    </swiper-item>
+</swiper>
+<view class="temp"></view>
+<view class="li li_bottom">
+<image class="li_icon1" src="../../images/index_heart.png"></image>
+<text class="li_title">遇到问题不要慌，海滨报修通帮助你解决。</text>
+</view>
+<view class="temp"></view> 
+<view class="grids">
+  <view class="items">
+    <image class="grids_icon" src="../../images/index_gonggong.png" bindtap="index_public"></image>
+    <text class="icon_text">公共报修</text>
+  </view>
+  <view class="items">
+    <image class="grids_icon" src="../../images/index_geren.png" bindtap="index_personal"></image>
+    <text class="icon_text">个人报修</text>
+  </view>
+  <view class="items">
+    <image class="grids_icon" src="../../images/index_jishuyuan.png" bindtap="index_mechanic"></image>
+    <text class="icon_text">维修技术员</text>
+  </view>
+  <view class="items">
+    <image class="grids_icon" src="../../images/index_guanliyuan.png" bindtap="index_admin"></image>
+    <text class="icon_text">维修管理员</text>
+  </view>
+</view>
+<view class="temp"></view>
+<view class="ptb-10">
+  <view class="li conter li_bottom">
+    <text>宿舍公告</text>
+    <image class="li_icon2" src="../../images/index_gonggao.jpg"></image>
+  </view>
+  <view wx:for="{{noticelist}}">
+      <view class="li" style="margin-left:0px" data-index="{{index}}" data-changeid="{{item.id}}" >
+          <view class="align_center"style="color:#00BBFF;">{{item.title}}</view>
+          <view class="align_right">{{item.creattime}}</view>
+          <view class="align_content">{{item.content}}</view>
+      </view>
+  </view>
+  
+</view>

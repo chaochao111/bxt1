@@ -1,0 +1,45 @@
+<!--pages/my_information/my_information.wxml-->
+<view class="ptb-10">
+  <view class='content'>
+    <view class='nav'>
+      <view class='top'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class='nickname'>
+        <open-data type="userNickName"></open-data> 
+      </view>
+    </view>
+    <view>
+          <view class='item'>
+            <text class='left'>学号：</text>
+            <input type="text" class="right align_right" value="{{myinfo.usernum}}" bindinput="formusernum"></input>
+          </view>
+          <view class='item'>
+            <text class='left'>姓名：</text>
+            <input type="text" class="right align_right" value="{{myinfo.username}}" bindinput="formusername"></input>
+          </view>
+          <view class='item'>
+          <text class='left'> 班级：</text>
+          <input type="text" class="right align_right" value="{{myinfo.usergrade}}"bindinput="formusergrade"></input>
+          </view>
+          <view class='item'>
+            <text class='left'>楼号：</text>
+            <input type="text" class="right align_right" value="{{myinfo.buildingname}}"bindinput="userbuildingname"></input>
+          </view>
+          <view class='item'>
+            <text class='left'>宿舍号：</text>
+            <input type="text" class="right align_right" value="{{myinfo.room}}"bindinput="formuserroom"></input>
+          </view>
+          <view class='item'>
+            <text class='left'>联系电话：</text>
+            <input type="text" class="right align_right" value="{{myinfo.phone}}"bindinput="formuserphone"></input>
+          </view>
+          <view class='item'>
+          <text class='left'> 邮箱：</text>
+          <input type="text" class="right align_right" value="{{myinfo.useremail}}"bindinput="formuseremail"></input>
+          </view>
+    </view>
+    <button bindtap="sumit">确定</button>
+  </view>
+</view>
+

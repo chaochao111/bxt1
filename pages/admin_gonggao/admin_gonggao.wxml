@@ -1,0 +1,37 @@
+<!--pages/admin_gonggao/admin_gonggao.wxml-->
+<view class="ptb-20">
+  <view bindtap="addgonggao" style="display: flex;">
+    <image class="addicon" src="../../images/add.png"></image>
+    <view class="addtext">新增公告</view>
+  </view>
+  <view class="temp"></view>
+  <view wx:for="{{noticelist}}" wx:key="">
+    <view class="li" data-index="{{index}}" data-changeid="{{item.id}}">
+      <view class="br" style="text-align: center; color:#00BBFF;">{{item.title}}</view>
+      <view>{{item.creattime}}</view>
+      <view class="br">{{item.content}}</view>
+      <view class="temp"></view>
+    </view>
+  </view>
+</view>
+
+  <!--新增弹窗-->
+<view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}">
+</view> 
+<view class = "modal-dialog {{isdisplay1?'oldmodelClass':'newmodelClassClass'}}" wx: if = "{{showModal1}}"> 
+  <view class = "modal-title" >新增公告 </view>
+  <view class="modal-content">
+  <view class="modal-input">
+      <text class="model_titel">标题</text>
+      <input placeholder="输入公告标题" style="width: 300px;" bindinput='gonggaoTitle' name='title'></input>
+    </view>
+    <view class="modal-input">
+      <text class="model_titel">内容</text>
+      <textarea placeholder="详细公告内容" bindinput='gonggaoContent' name="content"></textarea>
+    </view>
+  </view > 
+  <view class = "modal-footer" > 
+  <view class = "btn-cancel"bindtap = "onCancel1" data-status = "cancel" > 取消 </view>
+  <view class="btn-confirm" bindtap="onConfirm1" data-status="confirm">确定</view > 
+  </view>
+</view >

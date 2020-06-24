@@ -1,0 +1,58 @@
+<!--pages/index_admin/index_admin.wxml-->
+<view>
+     <text class="p_l_10">维修相关</text>
+</view>
+<view>
+  <view class="items" bindtap="renyuanguanli"> 
+    <image class="grids_icon" src="../../images/renyuanguanli.png"></image>
+    <view class="f_l">
+        <view>技术员管理</view>
+        <view class='p_t_10'>技术员信息修改可以点击这里</view>
+    </view>
+    <view class="f_r">
+         <image class='admin_img' src="../../images/arrow_right_64.png"></image>
+    </view>
+   </view>
+</view>
+<view>
+    <view class="items" bindtap="quyuguanli"> 
+    <image class="grids_icon" src="../../images/quyuguanli.png"></image>
+    <view class="f_l">
+        <view>园区管理</view>
+        <view class='p_t_10'>这里可以新增园区楼房</view>
+    </view>
+    <view class="f_r">
+         <image class='admin_img' src="../../images/arrow_right_64.png"></image>
+    </view>
+    </view>
+</view>
+<view>
+     <text class="p_l_10">信息相关</text>
+</view>
+<view>
+    <view class="items" bindtap="wentiguanli">
+    <image class="grids_icon" src="../../images/wentiguanli.png"></image>
+    <view class="f_l">
+        <view>常见问题</view>
+        <view class='p_t_10'>点击进入可以新增一些常见的问题</view>
+    </view>
+    <view class="f_r">
+         <image class='admin_img' src="../../images/arrow_right_64.png"></image>
+    </view>
+    </view>
+</view>
+
+<view>
+    <view class="items" bindtap="gonggaogunali">
+    <image class="grids_icon" src="../../images/gonggaoguanli.png"></image>
+    <view class="f_l">
+        <view>宿舍公告</view>
+        <view class='p_t_10'>进入公告，可以发布新的公告</view>
+    </view>
+    <view class="f_r">
+         <image class='admin_img' src="../../images/arrow_right_64.png"></image>
+    </view>
+    </view>
+</view>
+
+
